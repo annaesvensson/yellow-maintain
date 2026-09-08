@@ -100,7 +100,7 @@ Erweiterungen in der Befehlszeile pflegen:
 Die folgenden Einstellungen können in der Datei `system/extensions/yellow-system.ini` vorgenommen werden:
 
 `MaintainCodeDirectory` = Verzeichnis mit dem Code der Erweiterungen  
-`MaintainWebsiteDirectory ` = Verzeichnis mit den Dateien der offiziellen Webseite  
+`MaintainWebsiteDirectory` = Verzeichnis mit den Dateien der offiziellen Webseite  
 
 <a id="einstellungen-extension"></a>Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen werden:
 
@@ -121,7 +121,7 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 
 `experimental` = Erweiterung ist experimentell, Nutzung auf eigene Gefahr  
 `maintained` = Erweiterung wird gepflegt und [auf der offiziellen Webseite angezeigt](https://datenstrom.se/de/yellow/extensions/)  
-`unmaintained ` = Erweiterung wird nicht mehr gepflegt  
+`unmaintained` = Erweiterung wird nicht mehr gepflegt  
 `unassembled` = Erweiterung wird durch Werkzeugkette zusammengebaut  
 
 <a id="einstellungen-actions"></a>Die folgenden Dateiaktionen werden unterstützt:

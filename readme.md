@@ -120,7 +120,7 @@ The following settings can be configured in file `system/extensions/yellow-syste
 <a id="settings-status"></a>The following extension status values are supported:
 
 `experimental` = extension is experimental, use at your own risk  
-`maintained ` = extension is maintained and [shown on the official website](https://datenstrom.se/yellow/extensions/)  
+`maintained` = extension is maintained and [shown on the official website](https://datenstrom.se/yellow/extensions/)  
 `unmaintained` = extension is no longer maintained  
 `unassembled` = extension is assembled by toolchain  
 

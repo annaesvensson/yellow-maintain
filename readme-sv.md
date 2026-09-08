@@ -121,7 +121,7 @@ Följande inställningar kan konfigureras i filen `system/extensions/yellow-syst
 
 `experimental` = tillägget är experimentellt, användning på egen risk  
 `maintained` = tillägget underhålls och [visas på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/)  
-`unmaintained ` = tillägget underhålls inte längre  
+`unmaintained` = tillägget underhålls inte längre  
 `unassembled` = tillägget sätts ihop av verktygskedjan  
 
 <a id="inställningar-actions"></a> Följande filåtgärder stöds:
