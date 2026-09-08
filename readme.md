@@ -1,6 +1,6 @@
-# Publish 0.9.10
+# Maintain 0.9.10
 
-Make and publish extensions. Developed by Anna Svensson.
+Make and maintain extensions. Developed by Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Screenshot" /></p>
 
@@ -16,7 +16,7 @@ Make and publish extensions. Developed by Anna Svensson.
 
 You can improve your extension and show it to other people. This is a great way to get feedback and to experiment with features. Most extensions start as experimental with `Status: experimental`. Over time you get a better understanding of what people need and can improve experimental extensions. Good technology is made for people. Review your extension from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features.
 
-## How to publish an extension
+## How to maintain an extension
 
 This step is only necessary for [extensions on the official website](https://datenstrom.se/yellow/extensions/) with `Status: available`. It's optional for experimental extensions with `Status: experimental`. Publishing primarily updates the extension settings and readme files. Publishing also informs the [update mechanism](https://github.com/annaesvensson/yellow-update) that a new version of an extension is available. Keep in mind that only extensions available on the official website will be included in the update mechanism.
 

@@ -1,6 +1,6 @@
-# Publish 0.9.10
+# Maintain 0.9.10
 
-Göra och publicera tillägg. Utvecklad av Anna Svensson.
+Göra och underhålla tillägg. Utvecklad av Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Skärmdump" /></p>
 
@@ -16,7 +16,7 @@ Göra och publicera tillägg. Utvecklad av Anna Svensson.
 
 Du kan förbättra ditt tillägg och visa den för andra människor. Det här är ett bra sätt att få feedback och att experimentera med funktioner. De flesta tillägg börjar som experimentella med `Status: experimental`. Med tiden får man en bättre förståelse för vad människor behöver och kan förbättra experimentella tillägg. Bra teknologi är gjord för människor. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Kom ihåg att fokusera på människor. Inte på tekniska detaljer och massor av funktioner.
 
-## Hur man publicerar ett tillägg
+## Hur man underhåller ett tillägg
 
 Detta steg är endast nödvändigt för [tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/) med `Status: available`. Det är valfritt för experimentella tillägg med `Status: experimental`. Publicering uppdaterar främst tilläggsinställningarna och readme-filerna. Publicering informerar också [uppdateringsmekanismen](https://github.com/annaesvensson/yellow-update/tree/main/readme-sv.md) om att en ny version av ett tillägg är tillgänglig. Tänk på att endast tillägg som är tillgängliga på den officiella webbplatsen kommer att ingå i uppdateringsmekanismen.
 

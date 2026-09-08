@@ -1,6 +1,6 @@
-# Publish 0.9.10
+# Maintain 0.9.10
 
-Erweiterungen erstellen und veröffentlichen. Entwickelt von Anna Svensson.
+Erweiterungen erstellen und pflegen. Entwickelt von Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Bildschirmfoto" /></p>
 
@@ -16,7 +16,7 @@ Erweiterungen erstellen und veröffentlichen. Entwickelt von Anna Svensson.
 
 Du kannst deine Erweiterung verbessern und anderen Menschen zeigen. Das ist eine großartige Möglichkeit um Feedback zu erhalten und mit Funktionen zu experimentieren. Die meisten Erweiterungen beginnen experimentell mit `Status: experimental`. Im Laufe der Zeit bekommt man ein besseres Verständnis dafür was Menschen brauchen und kann experimentelle Erweiterungen verbessern. Gute Technologie wird für Menschen gemacht. Überprüfe deine Erweiterung aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Denk daran dich auf Menschen zu konzentrieren. Nicht auf technische Details und viele Funktionen.
 
-## Wie man eine Erweiterung veröffentlicht
+## Wie man eine Erweiterung pflegt
 
 Dieser Schritt ist nur für [Erweiterungen auf der offiziellen Webseite](https://datenstrom.se/de/yellow/extensions/) mit `Status: available` erforderlich. Für experimentelle Erweiterungen mit `Status: experimental` ist er optional. Durch das Veröffentlichen werden hauptsächlich die Erweiterungseinstellungen und Readme-Dateien aktualisiert. Durch das Veröffentlichen wird ausserdem der [Aktualisierungsmechanismus](https://github.com/annaesvensson/yellow-update/tree/main/readme-de.md) darüber informiert, dass eine neue Version einer Erweiterung verfügbar ist. Denke daran dass nur Erweiterungen die auf der offiziellen Webseite verfügbar sind in den Aktualisierungsmechanismus einbezogen werden.
 
