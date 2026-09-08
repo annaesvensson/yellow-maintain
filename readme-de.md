@@ -6,7 +6,7 @@ Erweiterungen erstellen und pflegen. Entwickelt von Anna Svensson.
 
 ## Wie man eine Erweiterung installiert
 
-[ZIP-Datei herunterladen](https://github.com/annaesvensson/yellow-publish/archive/refs/heads/main.zip) und in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/readme-de.md).
+[ZIP-Datei herunterladen](https://github.com/annaesvensson/yellow-maintain/archive/refs/heads/main.zip) und in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/readme-de.md).
 
 ## Wie man eine Erweiterung erstellt
 
@@ -18,9 +18,9 @@ Du kannst deine Erweiterung verbessern und anderen Menschen zeigen. Das ist eine
 
 ## Wie man eine Erweiterung pflegt
 
-Dieser Schritt ist nur für [Erweiterungen auf der offiziellen Webseite](https://datenstrom.se/de/yellow/extensions/) mit `Status: available` erforderlich. Für experimentelle Erweiterungen mit `Status: experimental` ist er optional. Durch das Veröffentlichen werden hauptsächlich die Erweiterungseinstellungen und Readme-Dateien aktualisiert. Durch das Veröffentlichen wird ausserdem der [Aktualisierungsmechanismus](https://github.com/annaesvensson/yellow-update/tree/main/readme-de.md) darüber informiert, dass eine neue Version einer Erweiterung verfügbar ist. Denke daran dass nur Erweiterungen die auf der offiziellen Webseite verfügbar sind in den Aktualisierungsmechanismus einbezogen werden.
+Dieser Schritt ist nur für [Erweiterungen auf der offiziellen Webseite](https://datenstrom.se/de/yellow/extensions/) mit `Status: maintained` erforderlich. Für experimentelle Erweiterungen mit `Status: experimental` ist er optional. Durch das Pflegen werden hauptsächlich die Erweiterungseinstellungen und Readme-Dateien aktualisiert. Durch das Pflegen wird ausserdem der [Aktualisierungsmechanismus](https://github.com/annaesvensson/yellow-update/tree/main/readme-de.md) darüber informiert, dass eine neue Version einer Erweiterung verfügbar ist. Denke daran dass nur Erweiterungen die auf der offiziellen Webseite verfügbar sind in den Aktualisierungsmechanismus einbezogen werden.
 
-Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/readme-de.md) veröffentlichen. Stelle sicher, dass du die [Überprüfungscheckliste](https://github.com/annaesvensson/yellow-help/blob/main/yellow-review-checklist.md) ausfüllst und die `VERSION` im Code erhöhst bevor du eine Erweiterung veröffentlichst. Bist du bereit deine Erweiterung zu veröffentlichen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php publish all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
+Du kannst deine Erweiterung in der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/readme-de.md) pflegen. Stelle sicher, dass du die [Überprüfungscheckliste](https://github.com/annaesvensson/yellow-help/blob/main/yellow-review-checklist.md) ausfüllst und die `VERSION` im Code erhöhst bevor du eine Erweiterung pflegst. Bist du bereit deine Erweiterung zu pflegen? Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php maintain all`. Du kannst wahlweise den Namen eines Verzeichnisses angeben. Das aktualisiert die notwendigen Dateien. Lade deine Änderungen hoch und erzeuge einen Pull-Request für das Repository `datenstrom/yellow`.
 
 ## Beispiele
 
@@ -54,7 +54,7 @@ Tag: language
 DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/german.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/german
 Published: 2025-12-19 01:22:34
-Status: available
+Status: maintained
 system/workers/german.php: german.php, create, update
 ~~~
 
@@ -72,7 +72,7 @@ DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/head
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
 Published: 2025-10-02 00:07:19
-Status: available
+Status: maintained
 system/workers/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful
 system/themes/stockholm.png: stockholm.png, create
@@ -83,24 +83,24 @@ system/themes/stockholm-opensans-regular.woff: stockholm-opensans-regular.woff, 
 
 Vorhandene Verzeichnisse in der Befehlszeile anzeigen:
 
-`php yellow.php publish`  
+`php yellow.php maintain`  
 
-Alle Verzeichnisse in der Befehlszeile veröffentlichen:
+Alle Verzeichnisse in der Befehlszeile pflegen:
 
-`php yellow.php publish all`  
+`php yellow.php maintain all`  
 
-Erweiterungen in der Befehlszeile veröffentlichen:
+Erweiterungen in der Befehlszeile pflegen:
 
-`php yellow.php publish yellow-example`  
-`php yellow.php publish yellow-language`  
-`php yellow.php publish yellow-stockholm`  
+`php yellow.php maintain yellow-example`  
+`php yellow.php maintain yellow-language`  
+`php yellow.php maintain yellow-stockholm`  
 
 ## Einstellungen
 
 Die folgenden Einstellungen können in der Datei `system/extensions/yellow-system.ini` vorgenommen werden:
 
-`PublishCodeDirectory` = Verzeichnis mit dem Code der veröffentlichten Erweiterungen  
-`PublishWebsiteDirectory ` = Verzeichnis mit den Dateien der offiziellen Webseite  
+`MaintainCodeDirectory` = Verzeichnis mit dem Code der Erweiterungen  
+`MaintainWebsiteDirectory ` = Verzeichnis mit den Dateien der offiziellen Webseite  
 
 <a id="einstellungen-extension"></a>Die folgenden Einstellungen können in der Datei `extension.ini` vorgenommen werden:
 
@@ -120,7 +120,7 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 <a id="einstellungen-status"></a>Die folgenden Erweiterungs-Statuswerte werden unterstützt:
 
 `experimental` = Erweiterung ist experimentell, Nutzung auf eigene Gefahr  
-`available` = Erweiterung ist verfügbar und [wird auf der offiziellen Webseite angezeigt](https://datenstrom.se/de/yellow/extensions/)  
+`maintained` = Erweiterung wird gepflegt und [auf der offiziellen Webseite angezeigt](https://datenstrom.se/de/yellow/extensions/)  
 `unmaintained ` = Erweiterung wird nicht mehr gepflegt  
 `unassembled` = Erweiterung wird durch Werkzeugkette zusammengebaut  
 

@@ -52,7 +52,7 @@ class YellowMaintain {
                 if (is_file($path.$this->yellow->system->get("updateExtensionFile"))) {
                     $responsible = $this->getExtensionResponsibleFromSettings($path);
                 } elseif (is_file("$path/yellow.php")) {
-                    $responsible = "Developed by Datenstrom community.";
+                    $responsible = "Developed by Datenstrom.";
                 } else {
                     $responsible = "No description available.";
                 }

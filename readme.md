@@ -6,7 +6,7 @@ Make and maintain extensions. Developed by Anna Svensson.
 
 ## How to install an extension
 
-[Download ZIP file](https://github.com/annaesvensson/yellow-publish/archive/refs/heads/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+[Download ZIP file](https://github.com/annaesvensson/yellow-maintain/archive/refs/heads/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
 ## How to make an extension
 
@@ -18,9 +18,9 @@ You can improve your extension and show it to other people. This is a great way 
 
 ## How to maintain an extension
 
-This step is only necessary for [extensions on the official website](https://datenstrom.se/yellow/extensions/) with `Status: available`. It's optional for experimental extensions with `Status: experimental`. Publishing primarily updates the extension settings and readme files. Publishing also informs the [update mechanism](https://github.com/annaesvensson/yellow-update) that a new version of an extension is available. Keep in mind that only extensions available on the official website will be included in the update mechanism.
+This step is only necessary for [extensions on the official website](https://datenstrom.se/yellow/extensions/) with `Status: maintained`. It's optional for experimental extensions with `Status: experimental`. Maintaining primarily updates the extension settings and readme files. Maintaining also informs the [update mechanism](https://github.com/annaesvensson/yellow-update) that a new version of an extension is available. Keep in mind that only extensions available on the official website will be included in the update mechanism.
 
-You can publish your extension at the [command line](https://github.com/annaesvensson/yellow-core). Make sure to complete the [review checklist](https://github.com/annaesvensson/yellow-help/blob/main/yellow-review-checklist.md) and increase the `VERSION` in the code before publishing an extension. Are you ready to publish your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php publish all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
+You can maintain your extension at the [command line](https://github.com/annaesvensson/yellow-core). Make sure to complete the [review checklist](https://github.com/annaesvensson/yellow-help/blob/main/yellow-review-checklist.md) and increase the `VERSION` in the code before maintaining an extension. Are you ready to maintain your extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php maintain all`. You can optionally add the name of a folder. This will update the necessary files. Upload your changes and create a pull request for the repository `datenstrom/yellow`.
 
 ## Examples
 
@@ -54,7 +54,7 @@ Tag: language
 DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/english.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/english
 Published: 2025-12-19 01:21:34
-Status: available
+Status: maintained
 system/workers/english.php: english.php, create, update
 ~~~
 
@@ -72,7 +72,7 @@ DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/head
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
 Published: 2025-10-02 00:07:19
-Status: available
+Status: maintained
 system/workers/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful
 system/themes/stockholm.png: stockholm.png, create
@@ -81,26 +81,26 @@ system/themes/stockholm-opensans-light.woff: stockholm-opensans-light.woff, crea
 system/themes/stockholm-opensans-regular.woff: stockholm-opensans-regular.woff, create, update, careful
 ~~~
 
-Showing available folders at the command line:
+Showing folders at the command line:
 
-`php yellow.php publish`  
+`php yellow.php maintain`  
 
-Publishing all folders at the command line:
+Maintaining all folders at the command line:
 
-`php yellow.php publish all`  
+`php yellow.php maintain all`  
 
-Publishing extensions at the command line:
+Maintaining extensions at the command line:
 
-`php yellow.php publish yellow-example`  
-`php yellow.php publish yellow-language`  
-`php yellow.php publish yellow-stockholm`  
+`php yellow.php maintain yellow-example`  
+`php yellow.php maintain yellow-language`  
+`php yellow.php maintain yellow-stockholm`  
 
 ## Settings
 
 The following settings can be configured in file `system/extensions/yellow-system.ini`:
 
-`PublishCodeDirectory` = directory with code of published extensions  
-`PublishWebsiteDirectory` = directory with files of the official website  
+`MaintainCodeDirectory` = directory with code of extensions  
+`MaintainWebsiteDirectory` = directory with files of the official website  
 
 <a id="settings-extension"></a>The following settings can be configured in file `extension.ini`:
 
@@ -120,7 +120,7 @@ The following settings can be configured in file `system/extensions/yellow-syste
 <a id="settings-status"></a>The following extension status values are supported:
 
 `experimental` = extension is experimental, use at your own risk  
-`available` = extension is available and [shown on the official website](https://datenstrom.se/yellow/extensions/)  
+`maintained ` = extension is maintained and [shown on the official website](https://datenstrom.se/yellow/extensions/)  
 `unmaintained` = extension is no longer maintained  
 `unassembled` = extension is assembled by toolchain  
 
