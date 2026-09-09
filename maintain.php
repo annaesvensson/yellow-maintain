@@ -2,7 +2,7 @@
 // Maintain extension, https://github.com/annaesvensson/yellow-maintain
 
 class YellowMaintain {
-    const VERSION = "0.9.11";
+    const VERSION = "0.9.12";
     public $yellow;                 // access to API
     public $extensions;             // number of total extensions
     public $experimental;           // number of experimental extensions
@@ -13,7 +13,7 @@ class YellowMaintain {
     // Handle initialisation
     public function onLoad($yellow) {
         $this->yellow = $yellow;
-        $this->yellow->system->setDefault("maintainCodeDirectory", "/My/Documents/GitHub/");
+        $this->yellow->system->setDefault("maintainCodeDirectory", "/My/Documents/Git-Hosting-Platform/");
         $this->yellow->system->setDefault("maintainWebsiteDirectory", "/My/Documents/Website/");
     }
 
@@ -571,7 +571,7 @@ class YellowMaintain {
     
     // Check extension settings
     public function checkExtensionSettings() {
-        return $this->yellow->system->get("maintainCodeDirectory")!="/My/Documents/GitHub/";
+        return $this->yellow->system->get("maintainCodeDirectory")!="/My/Documents/Git-Hosting-Platform/";
     }
     
     // Normalise ZIP archive created with libzip, make platform independent
