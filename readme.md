@@ -20,7 +20,7 @@ You can improve extensions and show it to other people. This is a great way to g
 
 This step is only necessary for [extensions on the official website](https://datenstrom.se/yellow/extensions/) with `Status: maintained`. Maintaining informs the [update mechanism](https://github.com/annaesvensson/yellow-update) that a new version of an extension is available. Maintaining also updates the readme file with the new version number. Keep in mind that only extensions available on the official website will be included in the update mechanism.
 
-You can maintain extensions at the [command line](https://github.com/annaesvensson/yellow-core). Make sure that you have completed the [review checklist](https://github.com/annaesvensson/yellow-help/blob/main/yellow-review-checklist.md) before you begin. Are you ready to maintain an extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php maintain all`. You can optionally add the name of a folder. This will update the necessary files in repositories. Upload your changes and send a pull request to the repository `datenstrom/yellow`.
+You can maintain extensions at the [command line](https://github.com/annaesvensson/yellow-core). Make sure that you have completed the [review checklist](https://github.com/annaesvensson/yellow-help/blob/main/yellow-review-checklist.md) before you begin. Are you ready to maintain an extension? Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php maintain all`. You can optionally add the name of a folder. This will update the necessary files in the relevant folders. Upload your changes and send a pull request to the repository `datenstrom/yellow`.
 
 ## Examples
 
