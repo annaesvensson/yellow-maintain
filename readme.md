@@ -14,7 +14,7 @@ Make and maintain extensions. Developed by Anna Svensson.
 
 ## How to improve an extension
 
-You can improve your extension and show it to other people. This is a great way to get feedback and to experiment with features. Most extensions start as experimental with `Status: experimental`. Over time you get a better understanding of what people need and can improve experimental extensions. Imagine what the user wants to do and what would make their life easier. Ask yourself, do I need this, do I want this, can I make this better? Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). 
+You can improve your extension and show it to other people. This is a great way to get feedback and to experiment with features. Most extensions start as experimental with `Status: experimental`. Over time you get a better understanding of what people need and can improve experimental extensions. Imagine what the user wants to do and what would make their life easier. Ask yourself, do I need this, do I want this, can I make this better? Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve the extension by another developer? Fork the relevant repository send a pull request to the developer.
 
 ## How to maintain an extension
 
