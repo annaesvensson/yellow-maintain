@@ -20,7 +20,7 @@ Du kan förbättra ditt tillägg och visa den för andra människor. Det här ä
 
 Detta steg är endast nödvändigt för [tillägg på officiella webbplatsen](https://datenstrom.se/sv/yellow/extensions/) med `Status: maintained`. Underhållning informerar [uppdateringsmekanismen](https://github.com/annaesvensson/yellow-update/tree/main/readme-sv.md) om att en ny version av ett tillägg är tillgänglig. Underhållning uppdaterar dessutom readme-filen med det nya versionsnumret. Tänk på att endast tillägg som är tillgängliga på den officiella webbplatsen kommer att ingå i uppdateringsmekanismen.
 
-Du kan underhålla ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/readme-sv.md). Se till att du har fyllt i [kontrollistan](https://github.com/annaesvensson/yellow-help/blob/main/yellow-review-checklist.md) innan du börjar. Är du redo att underhålla ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php maintain all`. Du kan valfritt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna i repositorierna. Ladda upp dina ändringar och skicka en pull-request till repository `datenstrom/yellow`.
+Du kan underhålla ditt tillägg på [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/readme-sv.md). Se till att du har fyllt i [kontrollistan](https://github.com/annaesvensson/yellow-help/blob/main/yellow-review-checklist.md) innan du börjar. Är du redo att underhålla ditt tillägg? Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php maintain all`. Du kan valfritt lägga till namnet på en mapp. Detta uppdaterar nödvändiga filerna i repositories. Ladda upp dina ändringar och skicka en pull-request till repository `datenstrom/yellow`.
 
 ## Exempel
 
@@ -47,13 +47,13 @@ Tilläggsinställningar för ett språk:
 # Datenstrom Yellow extension settings
 
 Extension: Swedish
-Version: 0.9.5
+Version: 0.9.6
 Description: Swedish language.
 Translator: Anna Svensson
 Tag: language
 DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/swedish.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish
-Published: 2025-12-19 01:22:34
+Published: 2026-09-08 21:54:03
 Status: maintained
 system/workers/swedish.php: swedish.php, create, update
 ~~~
@@ -64,14 +64,14 @@ Tilläggsinställningar för ett tema:
 # Datenstrom Yellow extension settings
 
 Extension: Stockholm
-Version: 0.9.5
+Version: 0.9.6
 Description: Stockholm is a clean theme.
 Designer: Anna Svensson
 Tag: example, theme
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
-Published: 2025-10-02 00:07:19
+Published: 2026-02-23 09:49:55
 Status: maintained
 system/workers/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful

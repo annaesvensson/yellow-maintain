@@ -47,13 +47,13 @@ Extension settings for a language:
 # Datenstrom Yellow extension settings
 
 Extension: English
-Version: 0.9.5
+Version: 0.9.6
 Description: English language.
 Translator: Mark Seuffert
 Tag: language
 DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/english.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/english
-Published: 2025-12-19 01:21:34
+Published: 2026-09-08 21:54:03
 Status: maintained
 system/workers/english.php: english.php, create, update
 ~~~
@@ -64,14 +64,14 @@ Extension settings for a theme:
 # Datenstrom Yellow extension settings
 
 Extension: Stockholm
-Version: 0.9.5
+Version: 0.9.6
 Description: Stockholm is a clean theme.
 Designer: Anna Svensson
 Tag: example, theme
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
-Published: 2025-10-02 00:07:19
+Published: 2026-02-23 09:49:55
 Status: maintained
 system/workers/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful
