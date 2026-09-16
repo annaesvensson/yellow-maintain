@@ -2,7 +2,7 @@
 // Maintain extension, https://github.com/annaesvensson/yellow-maintain
 
 class YellowMaintain {
-    const VERSION = "0.9.12";
+    const VERSION = "0.9.13";
     public $yellow;                 // access to API
     public $extensions;             // number of total extensions
     public $experimental;           // number of experimental extensions
@@ -124,6 +124,7 @@ class YellowMaintain {
             $statusCode = max($statusCode, $this->updateStandardTranslations($path, $pathBase));
             $statusCode = max($statusCode, $this->updateStandardDocumentation($path));
             $statusCode = max($statusCode, $this->updateOfficialDocumentation($path));
+            $statusCode = max($statusCode, $this->updateOfficialDownloads($path));
             if ($analyse && !$all) $this->extensions += $this->getStandardExtensionsCount($path);
             if ($statusCode==200 && $analyse && $all) $this->analyseExtensionSettings($path);
             if ($statusCode!=200) ++$this->errors;
@@ -340,7 +341,10 @@ class YellowMaintain {
             $fileNameNormalised = substru($fileNameDestination, strlenu($path));
             $fileNameNormalised = $this->yellow->lookup->normalisePath($fileNameNormalised);
             if (is_file($fileNameSource) && $this->yellow->lookup->isValidFile($fileNameNormalised)) {
-                if (!$this->yellow->toolbox->copyFile($fileNameSource, $fileNameDestination, true)) {
+                $modified = $this->yellow->toolbox->getFileModified($fileNameSource);
+                if (is_file($fileNameDestination)) $this->yellow->toolbox->deleteFile($fileNameDestination);
+                if (!$this->yellow->toolbox->copyFile($fileNameSource, $fileNameDestination, true) ||
+                    !$this->yellow->toolbox->modifyFile($fileNameDestination, $modified)) {
                     $statusCode = 500;
                     echo "ERROR maintaining files: Can't write file '$fileNameDestination'!\n";
                 }
@@ -429,7 +433,7 @@ class YellowMaintain {
         $statusCode = 200;
         $pathWebsiteContent = $this->yellow->system->get("maintainWebsiteDirectory").
             $this->yellow->system->get("coreContentDirectory");
-        if (is_dir($pathWebsiteContent) && $this->yellow->system->isExisting("maintainWebsiteDirectory")) {
+        if (is_dir($pathWebsiteContent)) {
             $fileNameMaintained = $path.$this->yellow->system->get("coreExtensionDirectory").
                 $this->yellow->system->get("updateMaintainedFile");
             $fileDataMaintained = $this->yellow->toolbox->readFile($fileNameMaintained);
@@ -460,6 +464,29 @@ class YellowMaintain {
                 if ($this->yellow->system->get("coreDebugMode")>=2) {
                     echo "YellowMaintain::updateOfficialDocumentation file:$fileName<br />\n";
                 }
+            }
+        }
+        return $statusCode;
+    }
+    
+    // Update official website, make sure downloads are up-to-date
+    public function updateOfficialDownloads($path) {
+        $statusCode = 200;
+        $pathWebsiteMedia = $this->yellow->system->get("maintainWebsiteDirectory").
+            $this->yellow->system->get("coreMediaDirectory");
+        if (is_dir($pathWebsiteMedia)) {
+            $fileNameSource = $path.$this->yellow->system->get("coreExtensionDirectory").
+                $this->yellow->system->get("updateMaintainedFile");
+            $fileNameDestination = $pathWebsiteMedia."downloads/".$this->yellow->system->get("updateMaintainedFile");
+            $modified = $this->yellow->toolbox->getFileModified($fileNameSource);
+            if (is_file($fileNameDestination)) $this->yellow->toolbox->deleteFile($fileNameDestination);
+            if (!$this->yellow->toolbox->copyFile($fileNameSource, $fileNameDestination, true) ||
+                !$this->yellow->toolbox->modifyFile($fileNameDestination, $modified)) {
+                $statusCode = 500;
+                echo "ERROR maintaining files: Can't write file '$fileNameDestination'!\n";
+            }
+            if ($this->yellow->system->get("coreDebugMode")>=2) {
+                echo "YellowMaintain::updateOfficialDownloads file:$fileNameDestination<br />\n";
             }
         }
         return $statusCode;
