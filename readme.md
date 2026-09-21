@@ -1,4 +1,4 @@
-# Maintain 0.9.13
+# Maintain 0.9.14
 
 Make and maintain extensions. Developed by Anna Svensson.
 
@@ -10,7 +10,7 @@ Make and maintain extensions. Developed by Anna Svensson.
 
 ## How to make an extension
 
-[Start with an example feature](https://github.com/annaesvensson/yellow-example) or [example theme](https://github.com/annaesvensson/yellow-stockholm) for Datenstrom Yellow. It's best to have a look at the code of some extensions in your `system/workers` folder and familiarise yourself with it. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Most extensions consist of code, documentation and other files. The [extension settings](#settings-extension) are stored in file `extension.ini`. These extension settings contain information about all the files that should be installed. Did you make a new extension? Create a new repository on [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=true&sort=moststars), [GitHub](https://github.com/topics/datenstrom-yellow) or one of the many Git hosting platforms. Upload your files to your repository and add the topic `datenstrom-yellow` to your repository.
+[Start with an example feature](https://github.com/annaesvensson/yellow-example) or [example theme](https://github.com/annaesvensson/yellow-stockholm). It's best to have a look at the code of some extensions in your `system/workers` folder and familiarise yourself with it. Then you can dive into any extension and find a well-known structure in which you can quickly find your way around. For sophisticated extensions there's an [API for developers](https://datenstrom.se/yellow/help/api-for-developers). Most extensions consist of code, documentation and other files. The [extension settings](#settings-extension) are stored in file `extension.ini`. These extension settings contain information about all the files that should be installed. Did you make a new extension? Create a new repository on [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=true&sort=moststars), [GitHub](https://github.com/topics/datenstrom-yellow) or one of the many Git hosting platforms. Upload your files to your repository and add the topic `datenstrom-yellow` to your repository.
 
 ## How to improve an extension
 
@@ -24,7 +24,7 @@ You can maintain extensions at the [command line](https://github.com/annaesvenss
 
 ## Examples
 
-Extension settings for a feature:
+Extension settings for an experimental extension:
 
 ~~~
 # Datenstrom Yellow extension settings
@@ -33,6 +33,7 @@ Extension: Example
 Version: 0.9.2
 Description: Example feature for Datenstrom Yellow.
 Developer: Anna Svensson
+Contributor: Giovanni Salmeri, Steffen Schultz, Mark Seuffert
 Tag: example, feature
 DownloadUrl: https://github.com/datenstrom/yellow-example/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/datenstrom/yellow-example
@@ -41,24 +42,27 @@ Status: experimental
 system/workers/example.php: example.php, create, update
 ~~~
 
-Extension settings for a language:
+Extension settings for a feature with multiple files:
 
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: English
-Version: 0.9.6
-Description: English language.
-Translator: Mark Seuffert
-Tag: language
-DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/english.zip
-DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/english
-Published: 2026-09-08 21:54:03
+Extension: Search
+Version: 0.9.3
+Description: Full-text search.
+Developer: Anna Svensson
+Tag: feature
+DownloadUrl: https://github.com/annaesvensson/yellow-search/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/annaesvensson/yellow-search
+DocumentationLanguage: en, de, sv
+Published: 2026-03-03 23:09:33
 Status: maintained
-system/workers/english.php: english.php, create, update
+system/workers/search.php: search.php, create, update
+system/layouts/search.html: search.html, create, update, careful
+content/search/page.md: page.md, create, optional
 ~~~
 
-Extension settings for a theme:
+Extension settings for a theme with multiple files:
 
 ~~~
 # Datenstrom Yellow extension settings
@@ -92,7 +96,7 @@ Maintaining all folders at the command line:
 Maintaining extensions at the command line:
 
 `php yellow.php maintain yellow-example`  
-`php yellow.php maintain yellow-language`  
+`php yellow.php maintain yellow-search`  
 `php yellow.php maintain yellow-stockholm`  
 
 ## Settings
@@ -107,9 +111,9 @@ The following settings can be configured in file `system/extensions/yellow-syste
 `Extension` = extension name  
 `Version` = extension version number  
 `Description` = extension description, one short sentence  
-`Developer` = responsible developer(s) of a feature, comma separated  
-`Designer` = responsible designer(s) of a theme, comma separated  
-`Translator` = responsible translator(s) of a language, comma separated  
+`Developer` = responsible developer for the extension  
+`Designer` = responsible designer for the extension  
+`Contributor` = contributor(s) to the extension, comma separated  
 `Tag` = extension tag(s) for categorisation, comma separated  
 `DownloadUrl` = extension download address  
 `DocumentationUrl` = extension documentation  

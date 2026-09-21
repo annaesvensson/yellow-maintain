@@ -1,4 +1,4 @@
-# Maintain 0.9.13
+# Maintain 0.9.14
 
 Göra och underhålla tillägg. Utvecklad av Anna Svensson.
 
@@ -10,7 +10,7 @@ Göra och underhålla tillägg. Utvecklad av Anna Svensson.
 
 ## Hur man gör ett tillägg
 
-[Börja med en exempel-funktion](https://github.com/annaesvensson/yellow-example) eller [ett exempel-tema](https://github.com/annaesvensson/yellow-stockholm) för Datenstrom Yellow. Det är bäst att titta på koden för några tillägg i `system/workers` mappen och bekanta dig med den. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). De flesta tillägg består av kod, dokumentation och andra filer. [Tilläggsinställningar](#inställningar-extension) lagras i filen `extension.ini`. Dessa tilläggsinställningar innehåller information om alla filer som ska installeras. Gjorde du ett nytt tillägg? Skapa ett nytt repository på [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=true&sort=moststars), [GitHub](https://github.com/topics/datenstrom-yellow) eller någon av de många Git-hostingplattformarna. Ladda upp dina filer till ditt repository och lägg till temat `datenstrom-yellow` i ditt repository.
+[Börja med en exempel-funktion](https://github.com/annaesvensson/yellow-example) eller [ett exempel-tema](https://github.com/annaesvensson/yellow-stockholm). Det är bäst att titta på koden för några tillägg i `system/workers` mappen och bekanta dig med den. Sen kan du dyka in i vilket tillägg som helst och hitta en välbekant struktur som du snabbt kan hitta runt i. För sofistikerade tillägg finns det ett [API för utvecklare](https://datenstrom.se/sv/yellow/help/api-for-developers). De flesta tillägg består av kod, dokumentation och andra filer. [Tilläggsinställningar](#inställningar-extension) lagras i filen `extension.ini`. Dessa tilläggsinställningar innehåller information om alla filer som ska installeras. Gjorde du ett nytt tillägg? Skapa ett nytt repository på [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=true&sort=moststars), [GitHub](https://github.com/topics/datenstrom-yellow) eller någon av de många Git-hostingplattformarna. Ladda upp dina filer till ditt repository och lägg till temat `datenstrom-yellow` i ditt repository.
 
 ## Hur man förbättrar ett tillägg
 
@@ -24,7 +24,7 @@ Du kan underhålla tillägg på [kommandoraden](https://github.com/annaesvensson
 
 ## Exempel
 
-Tilläggsinställningar för en funktion:
+Tilläggsinställningar för ett experimentellt tillägg:
 
 ~~~
 # Datenstrom Yellow extension settings
@@ -33,6 +33,7 @@ Extension: Example
 Version: 0.9.2
 Description: Example feature for Datenstrom Yellow.
 Developer: Anna Svensson
+Contributor: Giovanni Salmeri, Steffen Schultz, Mark Seuffert
 Tag: example, feature
 DownloadUrl: https://github.com/datenstrom/yellow-example/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/datenstrom/yellow-example
@@ -41,24 +42,27 @@ Status: experimental
 system/workers/example.php: example.php, create, update
 ~~~
 
-Tilläggsinställningar för ett språk:
+Tilläggsinställningar för en funktion med flera filer:
 
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: Swedish
-Version: 0.9.6
-Description: Swedish language.
-Translator: Anna Svensson
-Tag: language
-DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/swedish.zip
-DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish
-Published: 2026-09-08 21:54:03
+Extension: Search
+Version: 0.9.3
+Description: Full-text search.
+Developer: Anna Svensson
+Tag: feature
+DownloadUrl: https://github.com/annaesvensson/yellow-search/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/annaesvensson/yellow-search
+DocumentationLanguage: en, de, sv
+Published: 2026-03-03 23:09:33
 Status: maintained
-system/workers/swedish.php: swedish.php, create, update
+system/workers/search.php: search.php, create, update
+system/layouts/search.html: search.html, create, update, careful
+content/search/page.md: page.md, create, optional
 ~~~
 
-Tilläggsinställningar för ett tema:
+Tilläggsinställningar för ett tema med flera filer:
 
 ~~~
 # Datenstrom Yellow extension settings
@@ -92,7 +96,7 @@ Underhålla alla mappar på kommandoraden:
 Underhålla tillägg på kommandoraden:
 
 `php yellow.php maintain yellow-example`  
-`php yellow.php maintain yellow-language`  
+`php yellow.php maintain yellow-search`  
 `php yellow.php maintain yellow-stockholm`  
 
 ## Inställningar
@@ -107,9 +111,9 @@ Följande inställningar kan konfigureras i filen `system/extensions/yellow-syst
 `Extension` = tilläggets namn  
 `Version` = tilläggets versionsnummer  
 `Description` = tilläggets beskrivning, en kort mening  
-`Developer` = ansvarig utvecklare av en funktion, kommaseparerade  
-`Designer` = ansvarig formgivare av ett tema, kommaseparerade  
-`Translator` = ansvarig översättare av ett språk, kommaseparerade  
+`Developer` = ansvarig utvecklare för tillägget  
+`Designer` = ansvarig formgivare för tillägget  
+`Contributor` = medarbetare till tillägget, kommaseparerade  
 `Tag` = taggar för kategorisering av tillägget, kommaseparerade  
 `DownloadUrl` = tilläggets nedladdningsadress  
 `DocumentationUrl` = tilläggets dokumentation  

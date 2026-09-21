@@ -1,4 +1,4 @@
-# Maintain 0.9.13
+# Maintain 0.9.14
 
 Erweiterungen erstellen und pflegen. Entwickelt von Anna Svensson.
 
@@ -10,7 +10,7 @@ Erweiterungen erstellen und pflegen. Entwickelt von Anna Svensson.
 
 ## Wie man eine Erweiterung erstellt
 
-[Beginne mit einer Beispiel-Funktion](https://github.com/annaesvensson/yellow-example) oder [einem Beispiel-Theme](https://github.com/annaesvensson/yellow-stockholm) für Datenstrom Yellow. Am besten schaust du dir den Code von einigen Erweiterungen im `system/workers`-Verzeichnis an und machst dich damit vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Die meisten Erweiterungen bestehen aus Code, Dokumentation und weiteren Dateien. Die [Erweiterungseinstellungen](#einstellungen-extension) sind in der Datei `extension.ini` gespeichert. Diese Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden sollen. Hast du eine neue Erweiterung erstellt? Erstelle ein neues Repository auf [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=true&sort=moststars), [GitHub](https://github.com/topics/datenstrom-yellow) oder einer der vielen Git-Hosting-Platformen. Lade deine Dateien in dein Repository hoch und füge das Thema `datenstrom-yellow` zu deinem Repository hinzu.
+[Beginne mit einer Beispiel-Funktion](https://github.com/annaesvensson/yellow-example) oder [einem Beispiel-Theme](https://github.com/annaesvensson/yellow-stockholm). Am besten schaust du dir den Code von einigen Erweiterungen im `system/workers`-Verzeichnis an und machst dich damit vertraut. Dann kannst du in jede Erweiterung eintauchen und findest eine vertraute Struktur vor, in der du dich schnell zurecht findet. Für anspruchsvolle Erweiterungen gibt es eine [API für Entwickler](https://datenstrom.se/de/yellow/help/api-for-developers). Die meisten Erweiterungen bestehen aus Code, Dokumentation und weiteren Dateien. Die [Erweiterungseinstellungen](#einstellungen-extension) sind in der Datei `extension.ini` gespeichert. Diese Erweiterungseinstellungen enthalten Informationen über alle Dateien die installiert werden sollen. Hast du eine neue Erweiterung erstellt? Erstelle ein neues Repository auf [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=true&sort=moststars), [GitHub](https://github.com/topics/datenstrom-yellow) oder einer der vielen Git-Hosting-Platformen. Lade deine Dateien in dein Repository hoch und füge das Thema `datenstrom-yellow` zu deinem Repository hinzu.
 
 ## Wie man eine Erweiterung verbessert
 
@@ -24,7 +24,7 @@ Du kannst Erweiterungen in der [Befehlszeile](https://github.com/annaesvensson/y
 
 ## Beispiele
 
-Erweiterungseinstellungen für eine Funktion:
+Erweiterungseinstellungen für eine experimentelle Erweiterung:
 
 ~~~
 # Datenstrom Yellow extension settings
@@ -33,6 +33,7 @@ Extension: Example
 Version: 0.9.2
 Description: Example feature for Datenstrom Yellow.
 Developer: Anna Svensson
+Contributor: Giovanni Salmeri, Steffen Schultz, Mark Seuffert
 Tag: example, feature
 DownloadUrl: https://github.com/datenstrom/yellow-example/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/datenstrom/yellow-example
@@ -41,24 +42,27 @@ Status: experimental
 system/workers/example.php: example.php, create, update
 ~~~
 
-Erweiterungseinstellungen für eine Sprache:
+Erweiterungseinstellungen für eine Funktion mit mehreren Dateien:
 
 ~~~
 # Datenstrom Yellow extension settings
 
-Extension: German
-Version: 0.9.6
-Description: German language.
-Translator: David Fehrmann
-Tag: language
-DownloadUrl: https://github.com/annaesvensson/yellow-language/raw/main/downloads/german.zip
-DocumentationUrl: https://github.com/annaesvensson/yellow-language/tree/main/translations/german
-Published: 2026-09-08 21:54:03
+Extension: Search
+Version: 0.9.3
+Description: Full-text search.
+Developer: Anna Svensson
+Tag: feature
+DownloadUrl: https://github.com/annaesvensson/yellow-search/archive/refs/heads/main.zip
+DocumentationUrl: https://github.com/annaesvensson/yellow-search
+DocumentationLanguage: en, de, sv
+Published: 2026-03-03 23:09:33
 Status: maintained
-system/workers/german.php: german.php, create, update
+system/workers/search.php: search.php, create, update
+system/layouts/search.html: search.html, create, update, careful
+content/search/page.md: page.md, create, optional
 ~~~
 
-Erweiterungseinstellungen für ein Theme:
+Erweiterungseinstellungen für ein Theme mit mehreren Dateien:
 
 ~~~
 # Datenstrom Yellow extension settings
@@ -92,7 +96,7 @@ Alle Verzeichnisse in der Befehlszeile pflegen:
 Erweiterungen in der Befehlszeile pflegen:
 
 `php yellow.php maintain yellow-example`  
-`php yellow.php maintain yellow-language`  
+`php yellow.php maintain yellow-search`  
 `php yellow.php maintain yellow-stockholm`  
 
 ## Einstellungen
@@ -107,9 +111,9 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 `Extension` = Name der Erweiterung  
 `Version` = Versionsnummer der Erweiterung  
 `Description` = Beschreibung der Erweiterung, ein kurzer Satz  
-`Developer` = verantwortlicher Entwickler einer Funktion, durch Komma getrennt  
-`Designer` = verantwortlicher Designer eines Themes, durch Komma getrennt  
-`Translator` = verantwortlicher Übersetzer einer Sprache, durch Komma getrennt  
+`Developer` = verantwortlicher Entwickler der Erweiterung  
+`Designer` = verantwortlicher Designer der Erweiterung  
+`Contributor` = Mitarbeiter an der Erweiterung, durch Komma getrennt  
 `Tag` = Tags zur Kategorisierung der Erweiterung, durch Komma getrennt  
 `DownloadUrl` = Adresse zum Herunterladen der Erweiterung  
 `DocumentationUrl` = Dokumentation der Erweiterung  

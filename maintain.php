@@ -2,7 +2,7 @@
 // Maintain extension, https://github.com/annaesvensson/yellow-maintain
 
 class YellowMaintain {
-    const VERSION = "0.9.13";
+    const VERSION = "0.9.14";
     public $yellow;                 // access to API
     public $extensions;             // number of total extensions
     public $experimental;           // number of experimental extensions
@@ -182,7 +182,7 @@ class YellowMaintain {
                 $statusCode = 500;
                 echo "ERROR maintaining files: Please configure DownloadUrl and DocumentationUrl in file '$fileNameExtension'!\n";
             }
-            if (!$settings->isExisting("published")) {
+            if (!$settings->isExisting("published") || $publishedCode==0) {
                 $statusCode = 500;
                 echo "ERROR maintaining files: Please configure Published in file '$fileNameExtension'!\n";
             }
@@ -726,27 +726,25 @@ class YellowMaintain {
         return array($extension, $version, $published, $status, $tag);
     }
     
-    // Return extension responsible developer/designer/translator from settings
+    // Return extension responsible developer/designer from settings
     public function getExtensionResponsibleFromSettings($path) {
-        $responsible = $developer = $designer = $translator = "";
+        $responsible = $developer = $designer = "";
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
         $fileData = $this->yellow->toolbox->readFile($fileNameExtension);
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             if (preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches)) {
                 if (lcfirst($matches[1])=="developer") $developer = $matches[2];
                 if (lcfirst($matches[1])=="designer") $designer = $matches[2];
-                if (lcfirst($matches[1])=="translator") $translator = $matches[2];
             }
         }
         if (!is_string_empty($developer)) $responsible = "Developed by $developer.";
         if (!is_string_empty($designer)) $responsible = "Designed by $designer.";
-        if (!is_string_empty($translator)) $responsible = "Translated by $translator.";
-        if (is_string_empty($responsible)) $responsible = "No description available.";
+        if (is_string_empty($responsible)) $responsible = "Developer is not known.";
         return $responsible;
     }
     
     
-    // Return extension description including responsible developer/designer/translator
+    // Return extension description including responsible developer/designer
     public function getExtensionDescription($key, $value, $language) {
         $description = $responsible = "";
         if ($value->isExisting("description")) {
@@ -763,12 +761,11 @@ class YellowMaintain {
             $responsible = $this->yellow->language->getText("updateExtensionDesigner", $language);;
             $responsible = preg_replace("/@x/i", $value->get("designer"), $responsible);
         }
-        if ($value->isExisting("translator")) {
-            $responsible = $this->yellow->language->getText("updateExtensionTranslator", $language);;
-            $responsible = preg_replace("/@x/i", $value->get("translator"), $responsible);
-        }
         if (is_string_empty($description)) {
             $description = $this->yellow->language->getText("updateExtensionDefaultDescription", $language);
+        }
+        if (is_string_empty($responsible)) {
+            $responsible = $this->yellow->language->getText("UpdateExtensionDefaultResponsible", $language);
         }
         return "$description $responsible";
     }
