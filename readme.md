@@ -1,4 +1,4 @@
-# Maintain 0.9.14
+# Maintain 1.0.1
 
 Make and maintain extensions. Developed by Anna Svensson.
 
@@ -30,14 +30,14 @@ Extension settings for an experimental extension:
 # Datenstrom Yellow extension settings
 
 Extension: Example
-Version: 0.9.2
+Version: 1.0.2
 Description: Example feature for Datenstrom Yellow.
 Developer: Anna Svensson
 Contributor: Giovanni Salmeri, Mark Seuffert, Steffen Schultz
 Tag: example, feature
 DownloadUrl: https://github.com/datenstrom/yellow-example/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/datenstrom/yellow-example
-Published: 2026-01-30 19:00:30
+Published: 2026-09-25 19:26:46
 Status: experimental
 system/workers/example.php: example.php, create, update
 ~~~
@@ -48,14 +48,14 @@ Extension settings for a feature with multiple files:
 # Datenstrom Yellow extension settings
 
 Extension: Search
-Version: 0.9.3
+Version: 1.0.1
 Description: Full-text search.
 Developer: Anna Svensson
 Tag: feature
 DownloadUrl: https://github.com/annaesvensson/yellow-search/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-search
 DocumentationLanguage: en, de, sv
-Published: 2026-03-03 23:09:33
+Published: 2026-09-25 19:06:44
 Status: maintained
 system/workers/search.php: search.php, create, update
 system/layouts/search.html: search.html, create, update, careful
@@ -68,14 +68,14 @@ Extension settings for a theme with multiple files:
 # Datenstrom Yellow extension settings
 
 Extension: Stockholm
-Version: 0.9.6
+Version: 1.0.1
 Description: Stockholm is a clean theme.
 Designer: Anna Svensson
 Tag: example, theme
 DownloadUrl: https://github.com/annaesvensson/yellow-stockholm/archive/refs/heads/main.zip
 DocumentationUrl: https://github.com/annaesvensson/yellow-stockholm
 DocumentationLanguage: en, de, sv
-Published: 2026-02-23 09:49:55
+Published: 2026-09-25 19:06:45
 Status: maintained
 system/workers/stockholm.php: stockholm.php, create, update
 system/themes/stockholm.css: stockholm.css, create, update, careful

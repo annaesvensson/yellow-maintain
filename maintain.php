@@ -2,7 +2,7 @@
 // Maintain extension, https://github.com/annaesvensson/yellow-maintain
 
 class YellowMaintain {
-    const VERSION = "0.9.14";
+    const VERSION = "1.0.1";
     public $yellow;                 // access to API
     public $extensions;             // number of total extensions
     public $experimental;           // number of experimental extensions
