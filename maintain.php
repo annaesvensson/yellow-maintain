@@ -2,7 +2,7 @@
 // Maintain extension, https://github.com/annaesvensson/yellow-maintain
 
 class YellowMaintain {
-    const VERSION = "1.0.1";
+    const VERSION = "1.0.2";
     public $yellow;                 // access to API
     public $extensions;             // number of total extensions
     public $experimental;           // number of experimental extensions
@@ -449,7 +449,7 @@ class YellowMaintain {
                         $url = $this->getExtensionDocumentationUrl($key, $value, $language);
                         $status = $value->get("status");
                         $tag = $value->get("tag");
-                        if ($status=="maintained" || $status=="available")  { //TODO: status available is obsolete, remove later
+                        if ($status=="maintained") {
                             $fileDataNew = $this->setDocumentationListEntry($fileDataNew, $key, $description, $url, $tag);
                         }
                     }

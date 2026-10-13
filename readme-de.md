@@ -1,4 +1,4 @@
-# Maintain 1.0.1
+# Maintain 1.0.2
 
 Erweiterungen erstellen und pflegen. Entwickelt von Anna Svensson.
 
