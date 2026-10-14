@@ -594,7 +594,6 @@ class YellowMaintain {
         }
         if (preg_match("/^(.*?)(const\s+VERSION\s+=\s+\"[0-9\.]+\")(.*)$/s", $rawData, $parts)) {
             $rawDataMiddle = "const VERSION = \"$version\"";
-            //echo "$parts[2] ".strlenu($parts[1])." ".strlenu($parts[3])."\n";
             $rawData = $parts[1].$rawDataMiddle.$parts[3];
         }
         return $rawData;
