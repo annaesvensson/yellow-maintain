@@ -2,7 +2,7 @@
 // Maintain extension, https://github.com/annaesvensson/yellow-maintain
 
 class YellowMaintain {
-    const VERSION = "1.0.2";
+    const VERSION = "1.0.3";
     public $yellow;                 // access to API
     public $extensions;             // number of total extensions
     public $experimental;           // number of experimental extensions
@@ -360,6 +360,7 @@ class YellowMaintain {
     public function updateStandardTranslations($path, $pathBase) {
         $statusCode = 200;
         if (is_dir($pathBase."yellow-language/")) {
+            list($dummy, $versionNew) = $this->getExtensionInformationFromCode($pathBase."yellow-language/");
             $fileNameMaintained = $path.$this->yellow->system->get("coreExtensionDirectory").
                 $this->yellow->system->get("updateMaintainedFile");
             $fileDataExtensions = $this->yellow->toolbox->readFile($fileNameMaintained);
@@ -396,7 +397,7 @@ class YellowMaintain {
                         $settingsNew[$key] = $settings[$key];
                     }
                 }
-                $fileDataNew = $this->setLanguageDefaultSettings($fileData, $settingsNew);
+                $fileDataNew = $this->setLanguageDefaultSettings($fileData, $versionNew, $settingsNew);
                 if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($fileName, $fileDataNew)) {
                     $statusCode = 500;
                     echo "ERROR maintaining files: Can't write file '$fileName'!\n";
@@ -582,18 +583,21 @@ class YellowMaintain {
     }
     
     // Set default language settings in raw data
-    public function setLanguageDefaultSettings($rawData, $settings) {
+    public function setLanguageDefaultSettings($rawData, $version, $settings) {
         if (preg_match("/^(.*?\\\$this->yellow->language->setDefaults\(array\([\r\n]+)(.*?)(\)\);[\r\n]+.*)$/s", $rawData, $parts)) {
             $rawDataMiddle = "";
             foreach ($settings as $key=>$value) {
                 $rawDataMiddle .= "            \"".ucfirst($key).": $value\",\n";
             }
             $rawDataMiddle = rtrim($rawDataMiddle, ",\n");
-            $rawDataNew = $parts[1].$rawDataMiddle.$parts[3];
-        } else {
-            $rawDataNew = $rawData;
+            $rawData = $parts[1].$rawDataMiddle.$parts[3];
         }
-        return $rawDataNew;
+        if (preg_match("/^(.*?)(const\s+VERSION\s+=\s+\"[0-9\.]+\")(.*)$/s", $rawData, $parts)) {
+            $rawDataMiddle = "const VERSION = \"$version\"";
+            //echo "$parts[2] ".strlenu($parts[1])." ".strlenu($parts[3])."\n";
+            $rawData = $parts[1].$rawDataMiddle.$parts[3];
+        }
+        return $rawData;
     }
     
     // Check extension settings

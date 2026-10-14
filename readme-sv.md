@@ -1,4 +1,4 @@
-# Maintain 1.0.2
+# Maintain 1.0.3
 
 Göra och underhålla tillägg. Utvecklad av Anna Svensson.
 
